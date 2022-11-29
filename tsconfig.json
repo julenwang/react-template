@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "target": "ES2021",
+    // 生成 source map 文件
+    "sourceMap": true,
+    // 不能有隐式的 any
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    // 允许 .ts import .js
+    "allowJs": true,
+    // 允许 import .json 文件
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    // 添加 Alias 支持
+    "baseUrl": ".",
+    // 映射 alias
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    // 启用后，如果磁盘上的大小写和 import 语句中不同，将报错。
+    "forceConsistentCasingInFileNames": true,
+    // 不指定不行，大多数社区库还是 commonjs 格式提供的。
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "strict": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "target": "ES5"
+    }
+  }
+}

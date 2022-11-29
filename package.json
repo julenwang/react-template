@@ -1,0 +1,146 @@
+{
+  "name": "react-template",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack serve --progress --config ./configs/webpack.dev.babel.ts",
+    "build": "cross-env NODE_ENV=production webpack build --progress --config ./configs/webpack.prod.babel.ts",
+    "analyze": "cross-env ANALYZE=true npm run build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
+    "@babel/register": "^7.16.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
+    "@svgr/webpack": "^6.2.1",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@types/dotenv-webpack": "^7.0.3",
+    "@types/jest": "^27.4.1",
+    "@types/lodash": "^4.14.178",
+    "@types/mini-css-extract-plugin": "^2.4.0",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-virtualized-auto-sizer": "^1.0.1",
+    "@types/react-window": "^1.8.5",
+    "@types/semver": "^7.3.9",
+    "@types/styled-components": "^5.1.19",
+    "@types/webpack-bundle-analyzer": "^4.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "antd-dayjs-webpack-plugin": "^1.0.6",
+    "babel-jest": "^27.5.1",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-styled-components": "^2.0.2",
+    "copy-webpack-plugin": "^10.2.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^3.3.1",
+    "cssnano": "^5.1.9",
+    "dotenv": "^11.0.0",
+    "dotenv-webpack": "^7.0.3",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^25.3.2",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.5",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "miragejs": "^0.1.43",
+    "msw": "^0.36.3",
+    "postcss": "^8.4.14",
+    "postcss-loader": "^7.0.0",
+    "prettier": "^2.7.1",
+    "react-refresh": "^0.11.0",
+    "sass": "^1.46.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.0",
+    "ts-jest": "^27.1.3",
+    "ts-loader": "^9.2.6",
+    "type-fest": "2.8.0",
+    "typescript": "^4.7.4",
+    "webpack": "^5.65.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.1"
+  },
+  "dependencies": {
+    "@ahooksjs/use-url-state": "^3.1.4",
+    "@reduxjs/toolkit": "^1.7.1",
+    "ahooks": "^3.1.2",
+    "axios": "^0.24.0",
+    "clsx": "^1.2.1",
+    "dayjs": "^1.10.7",
+    "highlight.js": "^11.5.1",
+    "i18next": "^21.6.14",
+    "immer": "^9.0.7",
+    "js-cookie": "^3.0.1",
+    "lodash": "^4.17.21",
+    "nanoid": "^4.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.16.2",
+    "react-query": "^3.34.6",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "^6.2.1",
+    "react-use": "^17.3.2",
+    "react-virtualized-auto-sizer": "^1.0.6",
+    "react-window": "^1.8.7",
+    "redux": "^4.1.2",
+    "rxjs": "^7.5.5",
+    "semver": "^7.3.7",
+    "styled-components": "^5.3.3"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  },
+  "jest": {
+    "transform": {
+      "\\.tsx?$": "ts-jest",
+      "\\.jsx?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(molstar)/)"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.js"
+    ],
+    "globals": {
+      "ts-jest": {
+        "babelConfig": true,
+        "isolatedModules": true
+      }
+    }
+  },
+  "keycloakify": {
+    "extraPages": [
+      "my-extra-page-1.ftl",
+      "my-extra-page-2.ftl"
+    ]
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "browserslist": [
+    "supports css-grid"
+  ]
+}
