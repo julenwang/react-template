@@ -56,6 +56,18 @@ module.exports = {
     'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement'],
     // 没有++ --操作
     'no-plusplus': 'off',
+    // 允许 prefix _
+    'no-underscore-dangle': 'off',
+    // 允许变量使用 _ 和 __ 开始或结尾
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'variable',
+        format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+        leadingUnderscore: 'allowSingleOrDouble',
+        trailingUnderscore: 'allowSingleOrDouble',
+      },
+    ],
   },
   settings: {
     'import/parsers': {
