@@ -68,6 +68,15 @@ module.exports = {
         trailingUnderscore: 'allowSingleOrDouble',
       },
     ],
+    'import/order': [
+      'warn',
+      {
+        groups: ['builtin', 'external', 'internal', 'sibling', 'parent', 'index', 'type', 'object'],
+        alphabetize: {
+          order: 'asc',
+        },
+      },
+    ],
   },
   settings: {
     'import/parsers': {
