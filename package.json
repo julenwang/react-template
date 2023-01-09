@@ -141,6 +141,7 @@
     "npm": ">=7.0.0"
   },
   "browserslist": [
-    "supports css-grid"
+    "supports css-grid",
+    "not IE > 0"
   ]
 }
