@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { getStyleConfig } from './utils';
 import baseConfig from './webpack.common.babel';
 import webpackPaths from './webpack.paths';
-import { getStyleConfig } from './utils';
 
 // const port = process.env.PORT || 8008;
 const styleConfig = getStyleConfig(true);

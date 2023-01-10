@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import TerserPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { merge } from 'webpack-merge';
-import TerserPlugin from 'terser-webpack-plugin';
-import baseConfig from './webpack.common.babel';
 import { getStyleConfig } from './utils';
+import baseConfig from './webpack.common.babel';
 
 const styleConfig = getStyleConfig(false);
 
@@ -13,6 +13,8 @@ const configuration: webpack.Configuration = {
   output: {
     filename: 'static/js/[name].[chunkhash:8].js',
     clean: true,
+    // chunk name
+    chunkFilename: 'static/js/[name].js',
   },
   optimization: {
     minimize: true,
@@ -21,21 +23,13 @@ const configuration: webpack.Configuration = {
         parallel: true,
         terserOptions: {
           format: {
-            comments: false,
+            comments: /@banner/,
           },
         },
         extractComments: false,
       }),
     ],
-    splitChunks: {
-      cacheGroups: {
-        molstar: {
-          name: 'molstar',
-          test: /[\\/]molstar[\\/]/,
-          chunks: 'all',
-        },
-      },
-    },
+    splitChunks: false,
   },
   plugins: [
     new webpack.EnvironmentPlugin({

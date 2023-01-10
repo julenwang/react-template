@@ -1,13 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import webpack from 'webpack';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import dayjs from 'dayjs';
-import _ from 'lodash';
-import DotenvWebpackPlugin from 'dotenv-webpack';
-import dotenv from 'dotenv';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 // @ts-expect-error: 该包没有类型定义
 import AntdDayjsWebpackPlugin from 'antd-dayjs-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import dayjs from 'dayjs';
+import dotenv from 'dotenv';
+import DotenvWebpackPlugin from 'dotenv-webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import _ from 'lodash';
+import webpack from 'webpack';
 import webpackPaths from './webpack.paths';
 import packageJson from '../package.json';
 
@@ -112,7 +112,7 @@ const configuration: webpack.Configuration = {
     }),
     // 为每个 chunk 添加 banner
     new webpack.BannerPlugin({
-      banner: `Last update: ${publishTime} \nVersion: ${packageJson.version} \n`,
+      banner: `@banner \nLast update: ${publishTime} Version: ${packageJson.version} \nfullhash:[fullhash], chunkhash:[chunkhash], name:[name], filebase:[base], query:[query], file:[file]`,
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
