@@ -130,12 +130,6 @@
       }
     }
   },
-  "keycloakify": {
-    "extraPages": [
-      "my-extra-page-1.ftl",
-      "my-extra-page-2.ftl"
-    ]
-  },
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=7.0.0"
