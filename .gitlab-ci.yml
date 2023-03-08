@@ -6,7 +6,8 @@ build:
   stage: build
   image: node:16.16.0-alpine3.16
   script:
-    - if [ ! -d 'node_modules' ]; then npm ci; fi
+    - |
+      [ ! -d 'node_modules' ] && npm ci
     - npm run build
   cache:
     key:
@@ -15,7 +16,6 @@ build:
         - package-lock.json
     paths:
       - node_modules/
-
 #  cache:
 #    paths:
 #      - dist/
